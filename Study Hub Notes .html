@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 8 Study Institute</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#172033;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#111827,#1d4ed8);
+    color:white;
+    padding:16px 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+.navbar{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+    background:white;
+    color:#1d4ed8;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.logo h2{
+    font-size:19px;
+}
+
+.logo p{
+    font-size:11px;
+    opacity:.8;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#1d4ed8,#7c3aed);
+    color:white;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    opacity:.92;
+}
+
+.hero-buttons{
+    margin-top:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:5px;
+}
+
+.primary{
+    background:white;
+    color:#1d4ed8;
+}
+
+.secondary{
+    border:1px solid white;
+    color:white;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:45px 18px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:28px;
+}
+
+.section-title p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+/* NOTICE */
+
+.notice{
+    background:white;
+    border-left:5px solid #f59e0b;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:35px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.notice strong{
+    color:#d97706;
+}
+
+/* SEARCH */
+
+.search-box{
+    max-width:650px;
+    margin:0 auto 35px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 18px;
+    border:1px solid #dbe2ea;
+    border-radius:12px;
+    font-size:15px;
+    outline:none;
+}
+
+/* SUBJECTS */
+
+.subject-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.subject{
+    background:white;
+    padding:28px 20px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 7px 25px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.subject:hover{
+    transform:translateY(-7px);
+}
+
+.subject-icon{
+    font-size:45px;
+}
+
+.subject h3{
+    margin:12px 0 5px;
+}
+
+.subject p{
+    color:#64748b;
+    font-size:14px;
+}
+
+.subject button{
+    margin-top:18px;
+    padding:10px 18px;
+    border:0;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.math button{
+    background:#2563eb;
+}
+
+.science button{
+    background:#16a34a;
+}
+
+.sst button{
+    background:#ea580c;
+}
+
+/* NOTES */
+
+.notes-section{
+    margin-top:65px;
+}
+
+.chapter{
+    background:white;
+    margin-bottom:12px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 15px rgba(0,0,0,.05);
+}
+
+.chapter-header{
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.chapter-content{
+    display:none;
+    padding:0 18px 18px;
+    border-top:1px solid #eee;
+}
+
+.chapter-content ul{
+    padding:15px 0 0 20px;
+}
+
+.chapter-content li{
+    margin:7px 0;
+}
+
+.open{
+    display:block;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.feature{
+    background:white;
+    padding:22px 12px;
+    text-align:center;
+    border-radius:14px;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.feature-icon{
+    font-size:30px;
+}
+
+.feature h3{
+    margin:8px 0;
+}
+
+.feature p{
+    font-size:13px;
+    color:#64748b;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+.stat{
+    background:#111827;
+    color:white;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+}
+
+.stat h2{
+    font-size:30px;
+}
+
+/* QUIZ */
+
+.quiz{
+    background:linear-gradient(135deg,#111827,#312e81);
+    color:white;
+    padding:35px 20px;
+    text-align:center;
+    border-radius:20px;
+}
+
+.quiz button{
+    margin-top:18px;
+    padding:12px 25px;
+    border:0;
+    border-radius:9px;
+    background:white;
+    color:#312e81;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111827;
+    color:white;
+    padding:45px 20px;
+    text-align:center;
+}
+
+footer p{
+    color:#94a3b8;
+    margin-top:8px;
+}
+
+/* DARK MODE */
+
+.dark{
+    background:#0f172a;
+    color:#e5e7eb;
+}
+
+.dark .subject,
+.dark .chapter,
+.dark .feature,
+.dark .notice,
+.dark .search-box input{
+    background:#1e293b;
+    color:#e5e7eb;
+}
+
+.dark .section-title p,
+.dark .subject p,
+.dark .feature p{
+    color:#94a3b8;
+}
+
+.dark .chapter-content{
+    border-color:#334155;
+}
+
+/* DARK BUTTON */
+
+.dark-btn{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:50px;
+    height:50px;
+    border:0;
+    border-radius:50%;
+    background:#111827;
+    color:white;
+    font-size:20px;
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    nav{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .subject-grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+<div class="logo-icon">📚</div>
+
+<div>
+<h2>Class 8 Study Institute</h2>
+<p>Learn • Practice • Achieve</p>
+</div>
+
+</div>
+
+<div class="menu">☰</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#subjects">Subjects</a>
+<a href="#notes">Notes</a>
+<a href="#quiz">Quiz</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<h1>Welcome to Class 8 Study Institute</h1>
+
+<p>
+Your digital learning platform for Class 8
+Maths, Science and Social Science.
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn primary" href="#subjects">
+Explore Subjects
+</a>
+
+<a class="btn secondary" href="#notes">
+View Notes
+</a>
+
+</div>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- NOTICE -->
+
+<div class="notice">
+
+<strong>📢 Notice:</strong>
+
+New Class 8 study material is being added regularly.
+Check the website for chapter notes and important questions.
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="🔎 Search notes, chapters or subjects..."
+onkeyup="searchNotes()"
+>
+
+</div>
+
+
+<!-- SUBJECTS -->
+
+<section id="subjects">
+
+<div class="section-title">
+
+<h2>📚 Our Subjects</h2>
+
+<p>Select a subject to start learning</p>
+
+</div>
+
+
+<div class="subject-grid">
+
+
+<div class="subject math">
+
+<div class="subject-icon">📐</div>
+
+<h3>Mathematics</h3>
+
+<p>Formulas, concepts and solved examples.</p>
+
+<button onclick="goTo('maths')">
+Open Maths
+</button>
+
+</div>
+
+
+<div class="subject science">
+
+<div class="subject-icon">🔬</div>
+
+<h3>Science</h3>
+
+<p>Concepts, definitions and revision notes.</p>
+
+<button onclick="goTo('science')">
+Open Science
+</button>
+
+</div>
+
+
+<div class="subject sst">
+
+<div class="subject-icon">🌍</div>
+
+<h3>Social Science</h3>
+
+<p>History, Geography and Civics.</p>
+
+<button onclick="goTo('sst')">
+Open SST
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="notes-section">
+
+<div class="section-title">
+
+<h2>⭐ Why Study Here?</h2>
+
+<p>Everything you need for better revision</p>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">📖</div>
+<h3>Easy Notes</h3>
+<p>Simple explanations for quick learning.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🎯</div>
+<h3>Important Qs</h3>
+<p>Focus on important exam questions.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🧠</div>
+<h3>Quick Revision</h3>
+<p>Revise chapters efficiently.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🏆</div>
+<h3>Practice</h3>
+<p>Test your knowledge with quizzes.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NOTES -->
+
+<section class="notes-section" id="notes">
+
+<div class="section-title">
+
+<h2>📖 Chapter Notes</h2>
+
+<p>Tap a chapter to see the notes</p>
+
+</div>
+
+
+<!-- MATHS -->
+
+<h2 id="maths">📐 Mathematics</h2>
+
+<br>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+Rational Numbers
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Learn the meaning of rational numbers.</li>
+
+<li>Understand numerator and denominator.</li>
+
+<li>Practice addition, subtraction, multiplication and division.</li>
+
+<li>Revise important properties.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+Linear Equations
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Understand variables and constants.</li>
+
+<li>Learn how to solve simple linear equations.</li>
+
+<li>Practice transposition and inverse operations.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+Quadrilaterals
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>A quadrilateral has four sides.</li>
+
+<li>Sum of interior angles is 360°.</li>
+
+<li>Learn properties of different quadrilaterals.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- SCIENCE -->
+
+<h2 id="science" style="margin-top:40px;">
+🔬 Science
+</h2>
+
+<br>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+Crop Production
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Learn agricultural practices.</li>
+
+<li>Study sowing, irrigation and harvesting.</li>
+
+<li>Understand Kharif and Rabi crops.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+Microorganisms
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Microorganisms are very small living organisms.</li>
+
+<li>Important groups include bacteria, fungi and protozoa.</li>
+
+<li>Some microorganisms are useful.</li>
+
+<li>Some microorganisms cause diseases.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+Coal and Petroleum
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Coal and petroleum are fossil fuels.</li>
+
+<li>They are exhaustible natural resources.</li>
+
+<li>Petroleum gives products such as petrol and diesel.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- SST -->
+
+<h2 id="sst" style="margin-top:40px;">
+🌍 Social Science
+</h2>
+
+<br>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+🏛️ History
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Study important historical events.</li>
+
+<li>Make timelines of important dates.</li>
+
+<li>Learn important people, places and terms.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+🗺️ Geography
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Study natural and human resources.</li>
+
+<li>Learn important geographical terms.</li>
+
+<li>Practice important map locations.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="chapter">
+
+<div class="chapter-header" onclick="toggle(this)">
+⚖️ Civics
+<span>＋</span>
+</div>
+
+<div class="chapter-content">
+
+<ul>
+
+<li>Understand democracy and government.</li>
+
+<li>Learn important constitutional concepts.</li>
+
+<li>Study the role of government institutions.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- STATS -->
+
+<section class="notes-section">
+
+<div class="stats">
+
+<div class="stat">
+<h2>3</h2>
+<p>Subjects</p>
+</div>
+
+<div class="stat">
+<h2>∞</h2>
+<p>Learning</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Study Access</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="notes-section" id="quiz">
+
+<div class="quiz">
+
+<h2>🧠 Test Your Knowledge</h2>
+
+<p>
+Practice your Class 8 knowledge with interactive quizzes.
+</p>
+
+<button onclick="startQuiz()">
+Start Quiz
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<h2>📚 Class 8 Study Institute</h2>
+
+<p>Learn • Practice • Achieve</p>
+
+<p>Made for Class 8 students</p>
+
+<p style="margin-top:20px;">
+© 2026 Class 8 Study Institute
+</p>
+
+</footer>
+
+
+<!-- DARK MODE -->
+
+<button class="dark-btn" onclick="darkMode()">
+🌙
+</button>
+
+
+<script>
+
+
+function toggle(element){
+
+let content=element.nextElementSibling;
+
+content.classList.toggle("open");
+
+if(content.classList.contains("open")){
+element.querySelector("span").innerText="−";
+}
+else{
+element.querySelector("span").innerText="＋";
+}
+
+}
+
+
+function goTo(id){
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function darkMode(){
+
+document.body.classList.toggle("dark");
+
+}
+
+
+function searchNotes(){
+
+let value=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+let chapters=document.querySelectorAll(".chapter");
+
+chapters.forEach(function(chapter){
+
+let text=chapter.innerText.toLowerCase();
+
+if(text.includes(value)){
+chapter.style.display="block";
+}
+else{
+chapter.style.display="none";
+}
+
+});
+
+}
+
+
+function startQuiz(){
+
+alert(
+"Quiz section is coming soon! You can add your own Class 8 MCQs here."
+);
+
+}
+
+
+</script>
+
+
+</body>
+</html>
